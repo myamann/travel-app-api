@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const app = express();
 const pinRoute = require("./routes/pins");
+const userRoute = require("./routes/users");
 
 dotenv.config();
 
@@ -19,6 +20,8 @@ mongoose
   .catch((err) => console.log(err));
 
 app.use("/api/pins", pinRoute);
+
+app.use("/api/users", userRoute);
 
 
 
